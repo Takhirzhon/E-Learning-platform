@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707568481288",
+    "project_id": "e-learn-3bd8c",
+    "storage_bucket": "e-learn-3bd8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707568481288:android:dcca1a143616c758640dbd",
+        "android_client_info": {
+          "package_name": "com.tokhirzhon.learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707568481288-ro6tcuj5i2bggptfl9rb2rffkppv2m7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDanIoUY64FKETzyK4tBu2DEp1CiyIk4bs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707568481288-ro6tcuj5i2bggptfl9rb2rffkppv2m7c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
