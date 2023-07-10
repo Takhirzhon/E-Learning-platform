@@ -1,10 +1,11 @@
-package com.tokhirzhon.learn.ui.theme
+package com.tokhirzhon.learn
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.tokhirzhon.learn.R
 
-class Login : AppCompatActivity() {
+class Login : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
