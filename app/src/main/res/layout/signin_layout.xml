@@ -16,7 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="ignore"
         />
 
     <Button
@@ -24,11 +23,11 @@
         android:layout_width="212dp"
         android:layout_height="50dp"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="100dp"
         android:background="@drawable/sign_in_btn"
         android:gravity="center"
-        android:text="Войти"
+        android:text="@string/sign_in"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,7 +52,7 @@
         android:drawableStart="@drawable/google_logo"
         android:paddingStart="50dp"
         android:paddingEnd="40dp"
-        android:text="Войти через Google"
+        android:text="@string/google_btn"
         android:textColor="#2B59C3"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -71,15 +70,15 @@
         android:layout_marginStart="48dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/email_line"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingStart="15sp"
-        android:textColorHint="@color/blue"
+        android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/maker_Logo"
         app:layout_constraintStart_toStartOf="parent"
- />
+        tools:ignore="RtlSymmetry" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -89,26 +88,28 @@
         android:layout_marginTop="16dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/email_line"
-        android:hint="Пароль"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingStart="15sp"
         android:textColorHint="@color/blue"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
+        android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Забыли пароль?"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/forgot_password"
         android:textColor="@color/blue"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="384dp"
         tools:ignore="MissingConstraints"
-        android:clickable="true"
-        android:id="@+id/forgotPassword"/>
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="377dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

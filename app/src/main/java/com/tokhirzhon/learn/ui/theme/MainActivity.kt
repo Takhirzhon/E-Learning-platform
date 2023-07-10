@@ -27,9 +27,11 @@ class MainActivity : ComponentActivity() {
             val intent : Intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
+        //register button
         val register = findViewById<TextView>(R.id.reg_txt)
         register.setOnClickListener{
             val intent : Intent = Intent(this, Register ::class.java)
+            startActivity(intent)
         }
     }
 }

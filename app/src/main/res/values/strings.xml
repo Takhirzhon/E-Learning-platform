@@ -1,3 +1,9 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">E-Learning platform</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="password">Пароль</string>
+    <string name="email">Email</string>
+    <string name="google_btn">Войти через Google</string>
+    <string name="sign_in">Войти</string>
+    <string name="register">Зарегестрироваться</string>
 </resources>
