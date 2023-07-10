@@ -15,7 +15,6 @@
         <activity
             android:name=".ui.theme.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ELearningPlatform">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +25,19 @@
         <activity
             android:name=".ui.theme.Login"
             android:exported="true"
-            >
+            android:screenOrientation="fullSensor" />
 
-        </activity>
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        <activity
+            android:name=".ui.theme.Register"
+            android:exported="true"
+            android:screenOrientation="fullSensor" />
+
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
     </application>
 
 </manifest>

@@ -13,10 +13,6 @@ import com.tokhirzhon.learn.R
 
 class MainActivity : ComponentActivity() {
 
-    lateinit var gso: GoogleSignInOptions
-    lateinit var gsc: GoogleSignInClient
-    lateinit var googleBtn: ImageView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -26,12 +22,14 @@ class MainActivity : ComponentActivity() {
         button.setOnClickListener{
             val intent : Intent = Intent(this, Login::class.java)
             startActivity(intent)
+            finish()
         }
         //register button
         val register = findViewById<TextView>(R.id.reg_txt)
         register.setOnClickListener{
             val intent : Intent = Intent(this, Register ::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
