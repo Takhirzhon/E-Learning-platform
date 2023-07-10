@@ -40,9 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:background="@drawable/line"
-        app:layout_constraintTop_toBottomOf="@+id/sign_btn"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="51dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_btn" />
 
     <Button
         android:layout_width="308dp"
@@ -102,14 +102,16 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:gravity="center"
         android:text="@string/forgot_password"
         android:textColor="@color/blue"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="377dp" />
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

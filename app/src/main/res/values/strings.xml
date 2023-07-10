@@ -6,4 +6,6 @@
     <string name="google_btn">Войти через Google</string>
     <string name="sign_in">Войти</string>
     <string name="register">Зарегестрироваться</string>
+    <string name="remembered">Вспомнил пароль</string>
+    <string name="res">Сбросить пароль</string>
 </resources>
