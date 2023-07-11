@@ -17,11 +17,10 @@ class Register : ComponentActivity() {
         setContentView(R.layout.register_layout)
 
         val contin = findViewById<Button>(R.id.sign_btn)
-        val additionalFieldsCardView = findViewById<CardView>(R.id.additionalFieldsCardView)
+        val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
 
-        contin.setOnClickListener{
-            val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
-            additionalFieldsCardView.visibility = View.VISIBLE
+        contin.setOnClickListener {
+            cards.visibility = View.VISIBLE
             contin.visibility = View.GONE
 
         }
