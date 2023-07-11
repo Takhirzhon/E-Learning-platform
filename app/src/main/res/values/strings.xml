@@ -8,4 +8,6 @@
     <string name="register">Зарегестрироваться</string>
     <string name="remembered">Вспомнил пароль</string>
     <string name="res">Сбросить пароль</string>
+    <string name="contin">Продолжить</string>
+    <string name="repeat">Повторите пароль</string>
 </resources>
