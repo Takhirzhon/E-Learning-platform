@@ -21,6 +21,7 @@ class Login : ComponentActivity() {
         val forgotPassword = findViewById<TextView>(R.id.forgotPassword) //Забыл пароль для сброса
 
 
+        cardViewReset.setOnClickListener {}
 
 
         forgotPassword.setOnClickListener {
