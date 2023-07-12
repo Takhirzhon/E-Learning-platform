@@ -20,6 +20,8 @@ class Login : ComponentActivity() {
             startActivity(intent)
             finish()
         }
+
+
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val intent = Intent(this@Login, MainActivity::class.java)

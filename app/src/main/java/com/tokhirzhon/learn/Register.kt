@@ -7,9 +7,7 @@ import android.view.View
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import com.tokhirzhon.learn.R
 
 class Register : ComponentActivity() {
     @SuppressLint("CutPasteId")
