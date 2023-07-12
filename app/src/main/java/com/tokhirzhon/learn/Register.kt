@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.cardview.widget.CardView
@@ -17,7 +18,6 @@ class Register : ComponentActivity() {
 
         val contin = findViewById<Button>(R.id.sign_btn)
         val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
-
         contin.setOnClickListener {
             cards.visibility = View.VISIBLE
             contin.visibility = View.GONE
