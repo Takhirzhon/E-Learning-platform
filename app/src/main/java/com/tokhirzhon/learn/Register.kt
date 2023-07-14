@@ -23,10 +23,19 @@ class Register : ComponentActivity() {
             contin.visibility = View.GONE
 
         }
+
+
+
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val intent = Intent(this@Register, Login::class.java)
-                startActivity(intent)
+                if(cards.visibility == View.VISIBLE) {
+                    cards.visibility = View.GONE
+                    contin.visibility = View.VISIBLE
+                }
+                else {
+                    val intent = Intent(this@Register, Login::class.java)
+                    startActivity(intent)
+                }
             }
         }
         onBackPressedDispatcher.addCallback(this, callback)
