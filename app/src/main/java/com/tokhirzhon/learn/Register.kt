@@ -24,8 +24,6 @@ class Register : ComponentActivity() {
 
         }
 
-
-
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if(cards.visibility == View.VISIBLE) {
