@@ -1,10 +1,11 @@
-package com.tokhirzhon.learn
+package com.tokhirzhon.learn.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.tokhirzhon.learn.R
 
 
 class MainActivity : ComponentActivity() {
