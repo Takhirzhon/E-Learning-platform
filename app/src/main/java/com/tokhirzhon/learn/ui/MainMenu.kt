@@ -1,37 +1,32 @@
 package com.tokhirzhon.learn.ui
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tokhirzhon.learn.R
-import com.tokhirzhon.learn.databinding.ActivityMainMenuBinding
 
 class MainMenu : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main_menu)
 
-        binding = ActivityMainMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main_menu)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
+
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.navigation_home,
+            R.id.navigation_dashboard,
+            R.id.navigation_notifications,
+            R.id.navigation_personal_account
+        ))
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
