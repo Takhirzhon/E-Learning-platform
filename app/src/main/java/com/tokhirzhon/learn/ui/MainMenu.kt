@@ -2,6 +2,7 @@ package com.tokhirzhon.learn.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,7 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ActivityMainMenuBinding
 
-class MainMenu : ComponentActivity() {
+class MainMenu : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainMenuBinding
 

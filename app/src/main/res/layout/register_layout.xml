@@ -108,7 +108,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/maker_Logo"
+                android:id="@+id/makers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="75dp"
@@ -133,7 +133,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/maker_Logo" />
+                app:layout_constraintTop_toBottomOf="@+id/makers" />
 
             <EditText
                 android:id="@+id/school_name"

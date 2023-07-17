@@ -3,6 +3,7 @@ package com.tokhirzhon.learn.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
@@ -18,7 +19,7 @@ class Login : ComponentActivity() {
         val cardViewReset = findViewById<CardView>(R.id.resetCardView) //Cardview сброс пароля
         val rememebered = findViewById<TextView>(R.id.remembered) // Вспомнил пароль назад
         val forgotPassword = findViewById<TextView>(R.id.forgotPassword) //Забыл пароль для сброса
-
+        val signInAcc = findViewById<Button>(R.id.sign_btn) //Войти
 
         cardViewReset.setOnClickListener {}
 
@@ -41,5 +42,11 @@ class Login : ComponentActivity() {
             }
         }
         onBackPressedDispatcher.addCallback(this, callback)
+
+        signInAcc.setOnClickListener {
+            val intent = Intent(this, MainMenu::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
