@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_personal_account"/>
 
     <fragment
-        android:id="@+id/navigation_personal_account"
+        android:id="@+id/contact"
         android:name="com.tokhirzhon.learn.ui.personal.PersonalAccount"
         android:label="@string/personal_account"
         tools:layout="@layout/fragment_personal_account"/>
