@@ -43,7 +43,7 @@
         <activity
             android:name=".ui.MenuActivity"
             android:exported="false"
-            android:label="@string/title_activity_menu" />
+            android:screenOrientation="fullSensor"/>
 
         <meta-data
             android:name="android.app.lib_name"
