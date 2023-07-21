@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,19 +6,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.tokhirzhon.learn.ui.ui.home.HomeFragment"
+        android:name="com.tokhirzhon.learn.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.tokhirzhon.learn.ui.ui.dashboard.DashboardFragment"
+        android:name="com.tokhirzhon.learn.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.tokhirzhon.learn.ui.ui.notifications.NotificationsFragment"
+        android:name="com.tokhirzhon.learn.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_connect"
+        android:name="com.tokhirzhon.learn.ui.connect.FragmentConnect"
+        android:label="@string/connect"
+        tools:layout="@layout/fragment_connect" />
+
+    <fragment
+        android:id="@+id/navigation_personal"
+        android:name="com.tokhirzhon.learn.ui.personal.Personal"
+        android:label="@string/personal_account"
+        tools:layout="@layout/fragment_personal"/>
 </navigation>

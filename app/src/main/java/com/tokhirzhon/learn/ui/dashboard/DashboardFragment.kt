@@ -1,4 +1,4 @@
-package com.tokhirzhon.learn.ui.ui.dashboard
+package com.tokhirzhon.learn.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
