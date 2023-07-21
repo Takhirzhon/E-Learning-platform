@@ -1,4 +1,4 @@
-package com.tokhirzhon.learn.ui.notifications
+package com.tokhirzhon.learn.ui.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.tokhirzhon.learn.ui.home
+package com.tokhirzhon.learn.ui.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.tokhirzhon.learn.ui.dashboard
+package com.tokhirzhon.learn.ui.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
