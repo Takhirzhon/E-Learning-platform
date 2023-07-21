@@ -44,9 +44,8 @@ class Login : ComponentActivity() {
         onBackPressedDispatcher.addCallback(this, callback)
 
         signInAcc.setOnClickListener {
-            val intent = Intent(this, MainMenu::class.java)
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
