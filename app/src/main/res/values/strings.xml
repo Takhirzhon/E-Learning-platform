@@ -15,4 +15,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="personal_account">Кабинет</string>
+    <string name="connect">Связаться</string>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>
