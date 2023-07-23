@@ -11,8 +11,8 @@
     <string name="contin">Продолжить</string>
     <string name="repeat">Повторите пароль</string>
     <string name="title_home">Главная</string>
-    <string name="title_dashboard">Избранное</string>
-    <string name="title_notifications">Расписание</string>
+    <string name="title_schedule">Расписание</string>
+    <string name="title_notifications">Избранное</string>
     <string name="personal_account">Кабинет</string>
     <string name="connect">Связаться</string>
 </resources>
