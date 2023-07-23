@@ -6,10 +6,6 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
-    <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
 
     <item
         android:id="@+id/navigation_notifications"
@@ -17,12 +13,18 @@
         android:title="@string/title_notifications" />
 
     <item
-        android:id="@+id/navigation_personal"
-        android:icon="@drawable/baseline_person_outline_24"
-        android:title="@string/personal_account"/>
+        android:id="@+id/navigatioon_schedule"
+        android:icon="@drawable/ic_schedule_24"
+        android:title="@string/title_schedule" />
+
     <item
         android:id="@+id/navigation_connect"
         android:icon="@drawable/ic_mail_outline_24"
         android:title="@string/connect"/>
+
+    <item
+        android:id="@+id/navigation_personal"
+        android:icon="@drawable/baseline_person_outline_24"
+        android:title="@string/personal_account"/>
 
 </menu>

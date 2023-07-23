@@ -11,10 +11,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.tokhirzhon.learn.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigatioon_schedule"
+        android:name="com.tokhirzhon.learn.ui.schedule.Schedule"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" />
 
     <fragment
         android:id="@+id/navigation_notifications"
