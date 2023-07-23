@@ -11,16 +11,17 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.tokhirzhon.learn.ui.favourite.FavouriteFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
         android:id="@+id/navigatioon_schedule"
         android:name="com.tokhirzhon.learn.ui.schedule.Schedule"
         android:label="@string/title_schedule"
         tools:layout="@layout/fragment_schedule" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.tokhirzhon.learn.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_connect"

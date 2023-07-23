@@ -1,17 +1,44 @@
 package com.tokhirzhon.learn.ui
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.fragment.app.Fragment
 import com.tokhirzhon.learn.R
+import com.tokhirzhon.learn.databinding.ActivityMenuBinding
+import com.tokhirzhon.learn.ui.connect.FragmentConnect
+import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
+import com.tokhirzhon.learn.ui.home.HomeFragment
+import com.tokhirzhon.learn.ui.personal.Personal
+import com.tokhirzhon.learn.ui.schedule.Schedule
 
 class MenuActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        // Set the first fragment as the default fragment
+        switchFragment(HomeFragment())
 
+        binding.navView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> switchFragment(HomeFragment())
+                R.id.navigation_favourite -> switchFragment(FavouriteFragment())
+                R.id.navigatioon_schedule -> switchFragment(Schedule())
+                R.id.navigation_connect -> switchFragment(FragmentConnect())
+                R.id.navigation_personal -> switchFragment(Personal())
+                else -> false
+            }
+        }
+    }
+
+    private fun switchFragment(fragment: Fragment): Boolean {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_activity_menu, fragment)
+            .commit()
+        return true
     }
 }
