@@ -15,4 +15,6 @@
     <string name="title_notifications">Избранное</string>
     <string name="personal_account">Кабинет</string>
     <string name="connect">Связаться</string>
+    <string name="title_activity_bottom_navigation_top">BottomNavigationTop</string>
+    <string name="title_dashboard">Dashboard</string>
 </resources>
