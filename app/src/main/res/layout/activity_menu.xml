@@ -1,45 +1,79 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nav_host_fragment_activity_menu"
-        app:menu="@menu/top_nav_menu"
-    />
+   <RelativeLayout
+       android:id="@+id/top_of_screen"
+       android:layout_width="match_parent"
+       android:layout_height="110dp"
+       android:background="@color/black"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="80dp"
+           android:background="@drawable/makers_logo" />
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:background="@drawable/ic_filter_alt_24"
+           android:clickable="true"
+           android:layout_marginStart="360dp"
+           android:layout_marginTop="40dp"
+           android:contentDescription="Filter"
+          />
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:layout_marginStart="310dp"
+           android:layout_marginTop="40dp"
+           android:background="@drawable/ic_search_24"
+           android:clickable="true"
+           android:contentDescription="Search" />
+
+       <ImageView
+           android:layout_width="48dp"
+           android:layout_height="48dp"
+           android:layout_marginStart="15dp"
+           android:layout_marginTop="40dp"
+           android:background="@drawable/ic_menu_24"
+           android:clickable="true"
+           android:contentDescription="menu" />
+   </RelativeLayout>
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
-        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_activity_menu"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="60dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:navGraph="@navigation/mobile_navigation"
-        />
+        app:layout_constraintTop_toBottomOf="@id/top_of_screen"
+        app:navGraph="@navigation/mobile_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
