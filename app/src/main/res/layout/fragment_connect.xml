@@ -40,7 +40,6 @@
         android:text="support@makers.kg"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textColorLink="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
