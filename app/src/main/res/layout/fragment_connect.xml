@@ -29,20 +29,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/email_address"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="118dp"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginEnd="118dp"
         android:text="support@makers.kg"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/connect_back_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/connect_back"
+        android:background="@drawable/connect_back_two"
+        />
+
+    <TextView
+        android:layout_width="248dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="32dp"
+        android:text="Если вам нужна помощь в организации учебного процесса свяжитесь с нами по эл. почте"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@id/connect_back_two"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@id/connect_back_two"
+        app:layout_constraintTop_toTopOf="@id/connect_back_two" />
+
+    <TextView
+        android:id="@+id/support"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="118dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="education@makers.kg"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/connect_back_two" />
+    
+    <Button
+        android:layout_width="347dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/white"
+        android:text="@string/connect"
+        android:background="@drawable/button_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/support"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
