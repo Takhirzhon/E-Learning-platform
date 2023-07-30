@@ -1,6 +1,9 @@
 package com.tokhirzhon.learn.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.tokhirzhon.learn.R
@@ -10,6 +13,7 @@ import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
 import com.tokhirzhon.learn.ui.home.HomeFragment
 import com.tokhirzhon.learn.ui.personal.Personal
 import com.tokhirzhon.learn.ui.schedule.Schedule
+import com.tokhirzhon.learn.ui.dashboard.Dashboard
 
 class MenuActivity : AppCompatActivity() {
 
@@ -19,6 +23,11 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val dashboard = findViewById<ImageView>(R.id.dashboard_btn)
+
+        dashboard.setOnClickListener{
+        }
 
         // Set the first fragment as the default fragment
         switchFragment(HomeFragment())
@@ -30,9 +39,11 @@ class MenuActivity : AppCompatActivity() {
                 R.id.navigatioon_schedule -> switchFragment(Schedule())
                 R.id.navigation_connect -> switchFragment(FragmentConnect())
                 R.id.navigation_personal -> switchFragment(Personal())
+
                 else -> false
             }
         }
+
     }
 
     private fun switchFragment(fragment: Fragment): Boolean {

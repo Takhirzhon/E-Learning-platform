@@ -32,7 +32,7 @@ class Register : AppCompatActivity() {
                     contin.visibility = View.VISIBLE
                 }
                 else {
-                    val intent = Intent(this@Register, Login::class.java)
+                    val intent = Intent(this@Register, MainActivity::class.java)
                     startActivity(intent)
                 }
             }
