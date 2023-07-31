@@ -32,7 +32,6 @@ class MenuActivity : AppCompatActivity() {
         val containerCardView = findViewById<CardView>(R.id.cardview_dashboard)
         dashboard.setOnClickListener{
             containerCardView.visibility = View.VISIBLE
-            dashboard.visibility = View.GONE
             }
 
 
