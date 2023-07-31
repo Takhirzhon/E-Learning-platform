@@ -2,9 +2,13 @@ package com.tokhirzhon.learn.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ActivityMenuBinding
@@ -25,9 +29,12 @@ class MenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val dashboard = findViewById<ImageView>(R.id.dashboard_btn)
-
+        val containerCardView = findViewById<CardView>(R.id.cardview_dashboard)
         dashboard.setOnClickListener{
-        }
+            containerCardView.visibility = View.VISIBLE
+            dashboard.visibility = View.GONE
+            }
+
 
         // Set the first fragment as the default fragment
         switchFragment(HomeFragment())

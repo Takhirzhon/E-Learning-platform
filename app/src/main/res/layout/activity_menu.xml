@@ -5,52 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <RelativeLayout
-       android:id="@+id/top_of_screen"
-       android:layout_width="match_parent"
-       android:layout_height="110dp"
-       android:background="@color/black"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
+    <RelativeLayout
+        android:id="@+id/top_of_screen"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-       <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginStart="80dp"
-           android:background="@drawable/makers_logo" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:background="@drawable/makers_logo" />
 
-       <ImageView
-           android:layout_width="48dp"
-           android:layout_height="48dp"
-           android:background="@drawable/ic_filter_alt_24"
-           android:clickable="true"
-           android:layout_marginStart="360dp"
-           android:layout_marginTop="40dp"
-           android:contentDescription="Filter"
-          />
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="360dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_filter_alt_24"
+            android:clickable="true"
+            android:contentDescription="Filter" />
 
-       <ImageView
-           android:layout_width="48dp"
-           android:layout_height="48dp"
-           android:layout_marginStart="310dp"
-           android:layout_marginTop="40dp"
-           android:background="@drawable/ic_search_24"
-           android:clickable="true"
-           android:contentDescription="Search" />
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_search_24"
+            android:clickable="true"
+            android:contentDescription="Search" />
 
-       <ImageView
-           android:id="@+id/dashboard_btn"
-           android:layout_width="48dp"
-           android:layout_height="48dp"
-           android:layout_marginStart="15dp"
-           android:layout_marginTop="40dp"
-           android:background="@drawable/ic_menu_24"
-           android:clickable="true"
-           android:contentDescription="menu" />
-   </RelativeLayout>
-
-
+        <ImageView
+            android:id="@+id/dashboard_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_menu_24"
+            android:clickable="true"
+            android:contentDescription="menu">
+        </ImageView>
+    </RelativeLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -75,6 +73,97 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_of_screen"
-        app:navGraph="@navigation/mobile_navigation" />
+        app:navGraph="@navigation/mobile_navigation">
+    </androidx.fragment.app.FragmentContainerView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_of_screen"
+        app:navGraph="@navigation/mobile_navigation">
+        
+        <ImageView
+            android:id="@+id/personal_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/home_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="225dp"
+            />
+
+        <ImageView
+            android:id="@+id/free_courses_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/premium_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="225dp"
+            />
+
+        <ImageView
+            android:id="@+id/favourite_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="260dp"
+            android:layout_marginStart="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/schedule_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="260dp"
+            android:layout_marginStart="225dp"
+            />
+
+        <ImageView
+            android:id="@+id/test_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="45dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="225dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_bacgkrnd"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
