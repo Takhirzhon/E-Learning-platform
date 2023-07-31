@@ -3,12 +3,10 @@ package com.tokhirzhon.learn.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ActivityMenuBinding
@@ -17,7 +15,6 @@ import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
 import com.tokhirzhon.learn.ui.home.HomeFragment
 import com.tokhirzhon.learn.ui.personal.Personal
 import com.tokhirzhon.learn.ui.schedule.Schedule
-import com.tokhirzhon.learn.ui.dashboard.Dashboard
 
 class MenuActivity : AppCompatActivity() {
 
@@ -30,14 +27,51 @@ class MenuActivity : AppCompatActivity() {
 
         val dashboard = findViewById<ImageView>(R.id.dashboard_btn)
         val containerCardView = findViewById<CardView>(R.id.cardview_dashboard)
-        dashboard.setOnClickListener{
-            containerCardView.visibility = View.VISIBLE
+        val personalMenu = findViewById<ImageButton>(R.id.personal_menu)
+        val dashboardHome = findViewById<ImageButton>(R.id.home_menu)
+        val freeCourses = findViewById<ImageButton>(R.id.free_courses_menu)
+        val premiumCourses = findViewById<ImageButton>(R.id.premium_menu)
+        val favouriteMenu = findViewById<ImageButton>(R.id.favourite_menu)
+        val scheduleMenu = findViewById<ImageButton>(R.id.schedule_menu)
+
+        dashboard.setOnClickListener {
+            if (containerCardView.visibility == View.VISIBLE) {
+                containerCardView.visibility = View.GONE
+            } else {
+                containerCardView.visibility = View.VISIBLE
             }
+        }
+
+        personalMenu.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(Personal())
+        }
+
+        dashboardHome.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(HomeFragment())
+        }
+    /*    freeCourses.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(Personal())
+        }*/
+    /*    premiumCourses.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(Personal())
+        }*/
+        favouriteMenu.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(FavouriteFragment())
+        }
+
+        scheduleMenu.setOnClickListener {
+            containerCardView.visibility = View.GONE
+            switchFragment(Schedule())
+        }
 
 
         // Set the first fragment as the default fragment
         switchFragment(HomeFragment())
-
         binding.navView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> switchFragment(HomeFragment())
