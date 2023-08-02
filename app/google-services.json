@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "707568481288",
-    "project_id": "e-learn-3bd8c",
-    "storage_bucket": "e-learn-3bd8c.appspot.com"
+    "project_number": "124867681202",
+    "project_id": "makers-a90fb",
+    "storage_bucket": "makers-a90fb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:707568481288:android:dcca1a143616c758640dbd",
+        "mobilesdk_app_id": "1:124867681202:android:0e1a775abea3d35b67e2ab",
         "android_client_info": {
           "package_name": "com.tokhirzhon.learn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "707568481288-ro6tcuj5i2bggptfl9rb2rffkppv2m7c.apps.googleusercontent.com",
+          "client_id": "124867681202-mbneeaimbgm90putnkm7qp5bacerbt8l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDanIoUY64FKETzyK4tBu2DEp1CiyIk4bs"
+          "current_key": "AIzaSyBJ2u1h9dTMMVL2Lqepr3E7rz-lSg_7u0I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "707568481288-ro6tcuj5i2bggptfl9rb2rffkppv2m7c.apps.googleusercontent.com",
+              "client_id": "124867681202-mbneeaimbgm90putnkm7qp5bacerbt8l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
