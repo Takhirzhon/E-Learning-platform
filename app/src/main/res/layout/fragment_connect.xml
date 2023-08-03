@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
         android:id="@+id/connect_back"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/connect_bkgrnd"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:layout_height="126dp"
         android:layout_marginTop="104dp"
         android:text="Если вам нужна помощь в работе с приложением обучающей платформы( регистрации, изменение данных, и др.), свяжитесь с нами по эл. почте"
-        android:textColor="@color/blue"
+        android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -38,7 +38,7 @@
         android:layout_marginEnd="118dp"
         android:clickable="true"
         android:text="support@makers.kg"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -48,9 +48,9 @@
     <ImageView
         android:id="@+id/connect_back_two"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="140dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/connect_back_two"
+        android:background="@drawable/connect_bkgrnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/connect_back" />
@@ -60,7 +60,7 @@
         android:layout_height="68dp"
         android:layout_marginTop="32dp"
         android:text="Если вам нужна помощь в организации учебного процесса свяжитесь с нами по эл. почте"
-        android:textColor="@color/blue"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/connect_back_two"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@id/connect_back_two"
@@ -76,7 +76,7 @@
 
         android:focusable="true"
         android:text="education@makers.kg"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
@@ -109,7 +109,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/black"
+                android:background="@color/white"
                 android:orientation="vertical">
 
                 <ImageView
