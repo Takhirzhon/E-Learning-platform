@@ -13,7 +13,6 @@ import com.tokhirzhon.learn.model.Course
 class ScheduleAdapter(private val courses: ArrayList<Course>) :
     RecyclerView.Adapter<ScheduleAdapter.CourseViewHolder>() {
 
-    @SuppressLint("NotifyDataSetChanged")
     fun setCourses(newCourses: List<Course>) {
         courses.clear()
         courses.addAll(newCourses)

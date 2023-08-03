@@ -1,12 +1,11 @@
 package com.tokhirzhon.learn.ui.schedule
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.tokhirzhon.learn.databinding.FragmentScheduleBinding
@@ -19,10 +18,9 @@ class Schedule : Fragment(), Contract {
     private var sBinding: FragmentScheduleBinding? = null
     private val binding get() = sBinding!!
     private lateinit var recyclerView: RecyclerView
-    private val presenter: SchedulePresenter by lazy { SchedulePresenter(this) }
-    private lateinit var scheduleAdapter: ScheduleAdapter
     private lateinit var courses: ArrayList<Course>
     private var database = Firebase.firestore
+    private lateinit var scheduleAdapter: ScheduleAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,27 +31,25 @@ class Schedule : Fragment(), Contract {
 
         // Initialize the RecyclerView and Adapter
         recyclerView = binding.courseRecyclerView
-
         courses = arrayListOf() // Initialize the courses list first
         scheduleAdapter = ScheduleAdapter(courses)
         recyclerView.adapter = scheduleAdapter
 
-        database = FirebaseFirestore.getInstance()
         database.collection("courses").get().addOnSuccessListener { querySnapshot ->
             if (!querySnapshot.isEmpty) {
+                val courses = ArrayList<Course>()
                 for (document in querySnapshot) {
-                    val course: Course? = document.toObject(Course::class.java)
-                    course?.let { courses.add(it) }
+                    val course: Course = document.toObject(Course::class.java)
+                    course.let { courses.add(it) }
                 }
                 scheduleAdapter.setCourses(courses) // Use setCourses method to update the data
             }
         }
-            .addOnFailureListener { exception ->
+            .addOnFailureListener {
                 // Handle the failure case if needed
             }
 
         // Загрузите данные о курсах с сервера
-        presenter.getCoursesFromServer()
 
         return view
     }
@@ -78,24 +74,5 @@ class Schedule : Fragment(), Contract {
     }
 
     private fun init() {
-    }
-}
-
-class SchedulePresenter(private val view: Contract) {
-
-    //private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    // private val coursesCollection = db.collection("courses")
-
-    private val coursesList: ArrayList<Course> = arrayListOf()
-
-    // Здесь должна быть логика для загрузки данных о курсах из сервера и обновление coursesList
-    // Это может быть выполнено с использованием Firebase Realtime Database
-
-    // Метод для получения данных о курсах
-    fun getCoursesFromServer() {
-        // Загрузка данных из Firebase
-        // coursesList = ...
-        // Обновление представления
-        view.showCourses(coursesList)
     }
 }
