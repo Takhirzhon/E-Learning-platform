@@ -37,7 +37,7 @@ class ScheduleAdapter(private val courses: ArrayList<Course>) :
     inner class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.courseTitleTextView)
         val description: TextView = itemView.findViewById(R.id.courseDescriptionTextView)
-        val startDate = itemView.findViewById<TextView>(R.id.startDateTextView)
+        val startDate = itemView.findViewById<TextView>(R.id.startDateValue)
         val contactButton: Button = itemView.findViewById(R.id.contactButton)
     }
 }

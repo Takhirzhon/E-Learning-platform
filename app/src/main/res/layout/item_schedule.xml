@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/connect_bkgrnd" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +19,9 @@
             android:id="@+id/courseTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Course Title"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -24,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Course Description"
+            android:textColor="@color/black"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -35,23 +42,82 @@
                 android:id="@+id/startDateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start Date: "
-                android:textSize="14sp" />
+                android:text="Продолжительность курса: "
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/startDateValue"
+                android:id="@+id/startDateMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="dd/mm/yyyy"
-                android:textSize="14sp" />
+                android:text="время"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/contactButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/costCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cтоимость"
+            android:textColor="@color/black" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/contactButton"
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/button_blue"
+        android:text="@string/connect"
+        android:textColor="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="210dp">
+
+        <ImageView
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_blue"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Запуск:"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/startDateValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/startDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Дата"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/text"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
