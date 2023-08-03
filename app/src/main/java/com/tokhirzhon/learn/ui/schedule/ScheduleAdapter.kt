@@ -29,6 +29,8 @@ class ScheduleAdapter(private val courses: ArrayList<Course>) :
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         holder.title.text = courses[position].title
         holder.description.text = courses[position].description
+        holder.startDateMonth.text = courses[position].startDateMonth
+        holder.costCourse.text = courses[position].costCourse
         holder.startDate.text = courses[position].startDate
     }
 
@@ -37,7 +39,9 @@ class ScheduleAdapter(private val courses: ArrayList<Course>) :
     inner class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.courseTitleTextView)
         val description: TextView = itemView.findViewById(R.id.courseDescriptionTextView)
-        val startDate = itemView.findViewById<TextView>(R.id.startDateValue)
+        val startDate: TextView = itemView.findViewById(R.id.startDateValue)
+        val costCourse : TextView = itemView.findViewById(R.id.costCourse)
+        val startDateMonth: TextView = itemView.findViewById(R.id.startDateMonth)
         val contactButton: Button = itemView.findViewById(R.id.contactButton)
     }
 }
