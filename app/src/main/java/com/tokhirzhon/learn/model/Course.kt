@@ -1,7 +1,7 @@
 package com.tokhirzhon.learn.model
 
 data class Course(
-    val title: String,
-    val description: String,
-    val startDate: String
+    val title: String? = null,
+    val description: String? = null,
+    val startDate: String? = null
 )
