@@ -75,7 +75,8 @@
                 android:id="@+id/favourite_add"
                 android:contentDescription="Favourite"
                 android:layout_width="48dp"
-                android:layout_marginStart="250dp"
+                android:layout_marginStart="230dp"
+                android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/blue"
                 android:layout_height="48dp"
                 android:background="@drawable/favourite_small_btn" />
