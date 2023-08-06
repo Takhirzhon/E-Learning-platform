@@ -45,11 +45,9 @@ class Schedule : Fragment(), Contract {
                 scheduleAdapter.setCourses(courses) // Use setCourses method to update the data
             }
         }
-            .addOnFailureListener {
-                // Handle the failure case if needed
-            }
 
-        // Загрузите данные о курсах с сервера
+
+
 
         return view
     }

@@ -34,6 +34,8 @@ class ScheduleAdapter(private val courses: ArrayList<Course>) :
         holder.startDate.text = courses[position].startDate
     }
 
+    private fun addToFavourite(){
+    }
     override fun getItemCount(): Int = courses.size
 
     inner class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,6 +44,12 @@ class ScheduleAdapter(private val courses: ArrayList<Course>) :
         val startDate: TextView = itemView.findViewById(R.id.startDateValue)
         val costCourse : TextView = itemView.findViewById(R.id.costCourse)
         val startDateMonth: TextView = itemView.findViewById(R.id.startDateMonth)
+        val favourite: Button = itemView.findViewById(R.id.favourite_add)
         val contactButton: Button = itemView.findViewById(R.id.contactButton)
+
+        init {
+            favourite.setOnClickListener{
+            }
+        }
     }
 }
