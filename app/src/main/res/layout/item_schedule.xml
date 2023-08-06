@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/parentSchedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/connect_bkgrnd"
-        android:padding="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/connect_bkgrnd"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/courseTitleTextView"
@@ -31,6 +30,7 @@
             android:id="@+id/courseDescriptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="Course Description"
             android:textColor="@color/black"
             android:textSize="14sp" />
@@ -42,8 +42,8 @@
             <TextView
                 android:id="@+id/startDateTextView"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="Продолжительность курса: "
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -51,22 +51,35 @@
 
             <TextView
                 android:id="@+id/startDateMonth"
-                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="время"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/costCourse"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Cтоимость"
-            android:textColor="@color/black" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/costCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cтоимость"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/favourite_add"
+                android:contentDescription="Favourite"
+                android:layout_width="48dp"
+                android:layout_marginStart="250dp"
+                android:backgroundTint="@color/blue"
+                android:layout_height="48dp"
+                android:background="@drawable/favourite_small_btn" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button
@@ -78,8 +91,8 @@
         android:background="@drawable/button_blue"
         android:text="@string/connect"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/parentSchedule"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parentSchedule" />
 
     <ImageView
         android:layout_width="162dp"
@@ -97,14 +110,14 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Запуск: "
         android:layout_marginTop="30dp"
+        android:text="Запуск: "
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/parentSchedule"
+        app:layout_constraintEnd_toEndOf="@id/startDateValue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/startDateValue"/>
+        app:layout_constraintTop_toBottomOf="@id/parentSchedule" />
 
     <TextView
         android:id="@+id/startDateValue"
