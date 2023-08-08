@@ -22,6 +22,7 @@ class FavouriteFragment : Fragment() {
         val favouriteViewModel =
             ViewModelProvider(this).get(FavouriteViewModel::class.java)
 
+
         _binding = FragmentFavouriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

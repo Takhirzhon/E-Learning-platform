@@ -16,8 +16,6 @@ class ScheduleAdapter(
 ) :
     RecyclerView.Adapter<ScheduleAdapter.CourseViewHolder>() {
 
-    private val favoriteCourses = ArrayList<Course>()
-
     fun setCourses(newCourses: List<Course>) {
         courses.clear()
         courses.addAll(newCourses)
@@ -43,9 +41,6 @@ class ScheduleAdapter(
         }
     }
 
-    fun getFavoriteCourses(): List<Course> {
-        return favoriteCourses
-    }
 
     override fun getItemCount(): Int = courses.size
 

@@ -18,14 +18,14 @@ class Register : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var dataBase: DatabaseReference
-    private val USER_KEY : String = "User"
+    private val status : String = "User"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_layout)
 
         auth = FirebaseAuth.getInstance()
-        dataBase = FirebaseDatabase.getInstance().getReference(USER_KEY)
+        dataBase = FirebaseDatabase.getInstance().getReference(status)
 
         val contin = findViewById<Button>(R.id.contin)
         val cards = findViewById<CardView>(R.id.additionalFieldsCardView)

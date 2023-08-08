@@ -54,25 +54,10 @@ class Schedule : Fragment(), Contract {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        init()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         sBinding = null
     }
 
-    override fun showCourses(courses: ArrayList<Course>) {
-        // Обновите адаптер с полученными данными о курсах
-        scheduleAdapter.setCourses(courses)
-    }
 
-    override fun showError(errorMessage: String) {
-        // Отобразите сообщение об ошибке, если требуется
-    }
-
-    private fun init() {
-    }
 }
