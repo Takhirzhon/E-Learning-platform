@@ -6,19 +6,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.compose.material3.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.tokhirzhon.learn.R
+import com.tokhirzhon.learn.model.User
 
 class Register : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var dataBase: FirebaseDatabase
-    private lateinit var user: DatabaseReference
+    private lateinit var users: DatabaseReference
 
 
     @SuppressLint("CutPasteId")
@@ -30,15 +33,20 @@ class Register : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         dataBase = FirebaseDatabase.getInstance()
-        user = dataBase.getReference("Users")
+        users = dataBase.getReference("Users")
 
-        val contin = findViewById<Button>(R.id.sign_btn)
+        val contin = findViewById<Button>(R.id.contin)
         val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
 
         contin.setOnClickListener {
             cards.visibility = View.VISIBLE
             contin.visibility = View.GONE
 
+        }
+
+        val signUpIn = findViewById<Button>(R.id.sign)
+        signUpIn.setOnClickListener {
+            signUp()
         }
 
         val callback = object : OnBackPressedCallback(true) {
@@ -66,9 +74,18 @@ class Register : AppCompatActivity() {
         val schoolNumber = findViewById<EditText>(R.id.school_num)
         val classNum = findViewById<EditText>(R.id.class_num)
 
-        auth.createUserWithEmailAndPassword(email.toString(), password.toString())
-            .addOnSuccessListener {
 
-            }
+            auth.createUserWithEmailAndPassword(email.toString(), password.toString())
+                .addOnSuccessListener {
+                    val user = User()
+                    user.setEmail(email.toString())
+                    user.setPassword(password.toString())
+                    user.setCityName(cityName.toString())
+                    user.setSchoolName(schoolName.toString())
+
+                    users.child(user.getEmail()).setValue(user).addOnSuccessListener {
+                        Toast.makeText(this, "Вы добавлены", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 }
