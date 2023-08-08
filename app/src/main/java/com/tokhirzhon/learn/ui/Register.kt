@@ -10,22 +10,28 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.tokhirzhon.learn.R
 
 class Register : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-     var dataBase = FirebaseDatabase
+    private lateinit var dataBase: FirebaseDatabase
+    private lateinit var user: DatabaseReference
 
 
     @SuppressLint("CutPasteId")
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override
+
+    fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_layout)
 
         auth = FirebaseAuth.getInstance()
-        firestore = FirebaseFirestore.getInstance()
+        dataBase = FirebaseDatabase.getInstance()
+        user = dataBase.getReference("Users")
+
         val contin = findViewById<Button>(R.id.sign_btn)
         val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
 
@@ -60,10 +66,9 @@ class Register : AppCompatActivity() {
         val schoolNumber = findViewById<EditText>(R.id.school_num)
         val classNum = findViewById<EditText>(R.id.class_num)
 
-    }
+        auth.createUserWithEmailAndPassword(email.toString(), password.toString())
+            .addOnSuccessListener {
 
-    fun onClickSave(view: View){
-        String email
+            }
     }
-
 }
