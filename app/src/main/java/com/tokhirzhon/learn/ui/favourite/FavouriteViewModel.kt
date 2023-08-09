@@ -4,31 +4,32 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.tokhirzhon.learn.model.Course
 
 class FavouriteViewModel : ViewModel() {
     private val favoriteCourses = MutableLiveData<List<Course>>()
+    private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     fun addFavoriteCourse(course: Course) {
-        val db = Firebase.firestore
-
         val currentCourses = favoriteCourses.value?.toMutableList() ?: mutableListOf()
         currentCourses.add(course)
         favoriteCourses.value = currentCourses
 
-        // Save the favorite course in Firebase Firestore
         val user = FirebaseAuth.getInstance().currentUser
-        if (user != null) {
-            val documentRefFavorite = db.collection("course").document(user.uid)
-            documentRefFavorite.set(course)
-                .addOnSuccessListener {
-                    // Handle success
-                }
-                .addOnFailureListener {
-                    // Handle failure
-                }
+        user?.uid?.let { userId ->
+            val userFavoritesRef = database.child("user_favorites").child(userId)
+            val courseId = userFavoritesRef.push().key // Generate a new key for each course
+            if (courseId != null) {
+                userFavoritesRef.child(courseId).setValue(course)
+                    .addOnSuccessListener {
+                        // Handle success
+                    }
+                    .addOnFailureListener {
+                        // Handle failure
+                    }
+            }
         }
     }
 

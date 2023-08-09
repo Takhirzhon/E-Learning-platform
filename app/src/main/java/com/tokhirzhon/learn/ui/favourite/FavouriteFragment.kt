@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import androidx.recyclerview.widget.RecyclerView
 import com.tokhirzhon.learn.databinding.FragmentFavouriteBinding
 
 
 class FavouriteFragment : Fragment() {
     private lateinit var favoriteCoursesViewModel: FavouriteViewModel
+    private lateinit var favoriteRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,11 +24,12 @@ class FavouriteFragment : Fragment() {
         val binding = FragmentFavouriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Observe the favorite courses and update the UI
+        favoriteRecyclerView = binding.courseRecyclerView
+        val favoriteAdapter = FavoriteAdapter(emptyList()) // Initialize with an empty list
+        favoriteRecyclerView.adapter = favoriteAdapter
+
         favoriteCoursesViewModel.getFavoriteCourses().observe(viewLifecycleOwner) { courses ->
-            // Update the UI with the favorite courses
-            // You can access the courses list and display them in the UI
-            // For example, you can use a RecyclerView to display the favorite courses
+            favoriteAdapter.setCourses(courses)
         }
 
         return root
