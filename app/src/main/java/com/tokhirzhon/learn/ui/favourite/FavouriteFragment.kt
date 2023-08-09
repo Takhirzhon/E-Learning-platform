@@ -6,9 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.tokhirzhon.learn.databinding.FragmentFavouriteBinding
 
+
 class FavouriteFragment : Fragment() {
+    private var db = Firebase.firestore
+    var user = FirebaseAuth.getInstance().currentUser
+
+    val documentRefFavorite = db.collection("course").document(user.toString())
 
     private var _binding: FragmentFavouriteBinding? = null
 
