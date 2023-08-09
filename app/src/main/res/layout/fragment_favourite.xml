@@ -6,12 +6,12 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/courseRecyclerView"
+        android:id="@+id/favouriteRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         tools:itemCount="3"
-        tools:listitem="@layout/item_schedule"
+        tools:listitem="@layout/item_favourite"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 
