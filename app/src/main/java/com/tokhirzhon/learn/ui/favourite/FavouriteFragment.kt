@@ -13,32 +13,25 @@ import com.tokhirzhon.learn.databinding.FragmentFavouriteBinding
 
 
 class FavouriteFragment : Fragment() {
-    private var db = Firebase.firestore
-    var user = FirebaseAuth.getInstance().currentUser
-
-    val documentRefFavorite = db.collection("course").document(user.toString())
-
-    private var _binding: FragmentFavouriteBinding? = null
-
-    private val binding get() = _binding!!
+    private lateinit var favoriteCoursesViewModel: FavouriteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val favouriteViewModel =
-            ViewModelProvider(this).get(FavouriteViewModel::class.java)
+        favoriteCoursesViewModel = ViewModelProvider(this)[FavouriteViewModel::class.java]
 
-
-        _binding = FragmentFavouriteBinding.inflate(inflater, container, false)
+        val binding = FragmentFavouriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        return root
-    }
+        // Observe the favorite courses and update the UI
+        favoriteCoursesViewModel.getFavoriteCourses().observe(viewLifecycleOwner) { courses ->
+            // Update the UI with the favorite courses
+            // You can access the courses list and display them in the UI
+            // For example, you can use a RecyclerView to display the favorite courses
+        }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return root
     }
 }
