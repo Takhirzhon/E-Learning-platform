@@ -81,7 +81,7 @@
         android:clickable="true"
         android:gravity="center"
         android:text="@string/forgot_password"
-        android:textColor="@color/blue"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
             android:id="@+id/view_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/black">
+            android:background="@color/blue">
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress1"
@@ -151,7 +151,7 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:text="@string/remembered"
-                android:textColor="@color/blue"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
 
