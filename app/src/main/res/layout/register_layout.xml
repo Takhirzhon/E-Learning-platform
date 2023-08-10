@@ -205,15 +205,25 @@
 
     </androidx.cardview.widget.CardView>
 
-    <include
-        layout="@layout/google_btn"
+    <FrameLayout
+        android:id="@+id/google_sing_in_register_wrapper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:layout_marginTop="45dp"
         android:windowSoftInputMode="adjustNothing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <include
+            android:id="@+id/google_sing_in_register"
+            layout="@layout/google_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

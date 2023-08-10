@@ -2,31 +2,52 @@ package com.tokhirzhon.learn.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.model.User
 
 class Register : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var dataBase: DatabaseReference
-    private val status : String = "User"
-
+    lateinit var launcher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_layout)
+        auth = Firebase.auth
 
         auth = FirebaseAuth.getInstance()
-        dataBase = FirebaseDatabase.getInstance().getReference(status)
 
+        launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+                    account.idToken?.let { it1 -> firebaseAuthWithGoogle(it1) }
+                }
+            }catch (_: ApiException) {
+
+            }
+        }
+        val signInGoogleWrapper = findViewById<View>(R.id.google_sing_in_register_wrapper)
+        signInGoogleWrapper.setOnClickListener{
+            signInWithGoogle()
+        }
         val contin = findViewById<Button>(R.id.contin)
         val cards = findViewById<CardView>(R.id.additionalFieldsCardView)
 
@@ -35,13 +56,14 @@ class Register : AppCompatActivity() {
             contin.visibility = View.GONE
         }
 
+
         val signUpIn = findViewById<Button>(R.id.sign)
         signUpIn.setOnClickListener {
             signUp()
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
-
+        //кнопка назад
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (cards.visibility == View.VISIBLE) {
@@ -55,6 +77,7 @@ class Register : AppCompatActivity() {
         }
         onBackPressedDispatcher.addCallback(this, callback)
     }
+    //кнопка конец
 
     private fun signUp() {
         val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
@@ -65,9 +88,38 @@ class Register : AppCompatActivity() {
         val schoolNumber = findViewById<EditText>(R.id.school_num).text.toString()
         val classNum = findViewById<EditText>(R.id.class_num).text.toString()
 
+
+
         if (email.isNotEmpty() && password.isNotEmpty() && password == passwordSure) {
             val user = User(email, password, cityName, schoolName, schoolNumber, classNum)
-            dataBase.push().setValue(user)
+
+            auth.createUserWithEmailAndPassword(email, password)
+        }
+    }
+    private fun getClient() : GoogleSignInClient {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        return  GoogleSignIn.getClient(this, gso)
+    }
+
+    private fun signInWithGoogle(){
+        val signInClient = getClient()
+        launcher.launch(signInClient.signInIntent)
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential).addOnCompleteListener{
+            if(it.isSuccessful){
+                Log.d("My Log", "Вы вошли в аккаунт")
+                val intent = Intent(this, MenuActivity::class.java)
+                startActivity(intent)
+            }
+            else {
+                Log.d("My Log", "Ошибка входа, попробуйте еще раз!")
+            }
         }
     }
 }
