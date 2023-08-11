@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.Login"
+            android:name=".activity.Login"
             android:exported="true"
             android:screenOrientation="fullSensor" />
 
@@ -33,7 +33,7 @@
             android:value="" />
 
         <activity
-            android:name=".ui.Register"
+            android:name=".activity.Register"
             android:exported="true"
             android:screenOrientation="fullSensor" />
 
@@ -42,7 +42,7 @@
             android:value="" />
 
         <activity
-            android:name=".ui.MenuActivity"
+            android:name=".activity.MenuActivity"
             android:exported="false"
             android:screenOrientation="fullSensor" />
 
