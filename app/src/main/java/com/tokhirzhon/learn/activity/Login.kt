@@ -1,4 +1,4 @@
-package com.tokhirzhon.learn.ui
+package com.tokhirzhon.learn.activity
 
 import android.content.Intent
 import android.os.Bundle

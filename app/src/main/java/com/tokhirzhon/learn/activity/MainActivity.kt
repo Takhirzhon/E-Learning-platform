@@ -1,10 +1,9 @@
-package com.tokhirzhon.learn.ui
+package com.tokhirzhon.learn.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.tokhirzhon.learn.R
 
