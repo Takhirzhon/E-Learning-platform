@@ -1,53 +1,61 @@
 package com.tokhirzhon.learn.ui.schedule
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.tokhirzhon.learn.databinding.FragmentScheduleBinding
 import com.tokhirzhon.learn.model.Course
-import com.tokhirzhon.learn.ui.favourite.FavouriteViewModel
-import com.tokhirzhon.learn.view.Contract
+import com.tokhirzhon.learn.model.SharedViewModel
+import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
 
-
-class Schedule : Fragment(), Contract {
-    private lateinit var favoriteCoursesViewModel: FavouriteViewModel
+class Schedule : Fragment() {
 
     private var sBinding: FragmentScheduleBinding? = null
     private val binding get() = sBinding!!
     private lateinit var recyclerView: RecyclerView
     private lateinit var courses: ArrayList<Course>
-    private var database = Firebase.firestore
-    private lateinit var scheduleAdapter: ScheduleAdapter
+    private val database = Firebase.firestore
+    private lateinit var courseAdapter: CourseAdapter
+    private val sharedViewModel: SharedViewModel by lazy {
+        ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        sBinding = FragmentScheduleBinding.inflate(layoutInflater, container, false)
-        favoriteCoursesViewModel = ViewModelProvider(this)[FavouriteViewModel::class.java]
+        sBinding = FragmentScheduleBinding.inflate(inflater, container, false)
 
         val view = binding.root
 
         // Initialize the RecyclerView and Adapter
         recyclerView = binding.courseRecyclerView
-        courses = arrayListOf() // Initialize the courses list first
-        scheduleAdapter = ScheduleAdapter(courses, favoriteCoursesViewModel)
-        recyclerView.adapter = scheduleAdapter
+        courses = arrayListOf()
+
+        courseAdapter = CourseAdapter(courses) { clickedCourse ->
+            sharedViewModel.addToFavorites(clickedCourse as Course)
+        }
+        recyclerView.adapter = courseAdapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         database.collection("courses").get().addOnSuccessListener { querySnapshot ->
             if (!querySnapshot.isEmpty) {
-                val courses = ArrayList<Course>()
+                val loadedCourses = ArrayList<Course>()
                 for (document in querySnapshot) {
                     val course: Course = document.toObject(Course::class.java)
-                    course.let { courses.add(it) }
+                    loadedCourses.add(course)
                 }
-                scheduleAdapter.setCourses(courses) // Use setCourses method to update the data
+                courses.clear()
+                courses.addAll(loadedCourses)
+                courseAdapter.notifyDataSetChanged() // Notify the adapter about the data change
             }
         }
         return view
@@ -57,6 +65,4 @@ class Schedule : Fragment(), Contract {
         super.onDestroyView()
         sBinding = null
     }
-
-
 }
