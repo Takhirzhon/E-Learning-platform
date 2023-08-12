@@ -6,6 +6,7 @@
         android:drawable="@drawable/ic_favorite_24"
         android:gravity="center"
         android:height="30dp"
-        android:width="30dp" />
+        android:width="30dp"/>
+
 </layer-list>
 

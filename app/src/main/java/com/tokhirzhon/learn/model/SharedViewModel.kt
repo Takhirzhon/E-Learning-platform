@@ -3,7 +3,6 @@ package com.tokhirzhon.learn.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.tokhirzhon.learn.model.Course
 
 class SharedViewModel : ViewModel() {
     private val _favoriteCourses = MutableLiveData<List<Course>>()

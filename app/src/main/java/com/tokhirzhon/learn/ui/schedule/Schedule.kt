@@ -36,7 +36,6 @@ class Schedule : Fragment() {
 
         val view = binding.root
 
-        // Initialize the RecyclerView and Adapter
         recyclerView = binding.courseRecyclerView
         courses = arrayListOf()
 
@@ -55,7 +54,7 @@ class Schedule : Fragment() {
                 }
                 courses.clear()
                 courses.addAll(loadedCourses)
-                courseAdapter.notifyDataSetChanged() // Notify the adapter about the data change
+                courseAdapter.notifyDataSetChanged()
             }
         }
         return view

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ItemFavouriteBinding // Change to your actual binding class
 import com.tokhirzhon.learn.model.Course
 
@@ -18,13 +19,13 @@ class CourseAdapter(
             inflater,
             parent,
             false
-        ) // Change to your actual binding class
+        )
         return CourseViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val course = courses[position]
-        // Bind your course data to the view holder's views here
+
         holder.bind(course)
     }
 
@@ -41,7 +42,7 @@ class CourseAdapter(
             binding.costCourse.text = course.costCourse
 
             binding.favouriteAdd.setOnClickListener {
-                onFavouriteClick(course) // Invoke the callback when the button is clicked
+                onFavouriteClick(course)
             }
         }
     }
