@@ -1,6 +1,5 @@
 package com.tokhirzhon.learn.ui.schedule
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,6 @@ import com.google.firebase.ktx.Firebase
 import com.tokhirzhon.learn.databinding.FragmentScheduleBinding
 import com.tokhirzhon.learn.model.Course
 import com.tokhirzhon.learn.model.SharedViewModel
-import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
 
 class Schedule : Fragment() {
 
@@ -25,7 +23,7 @@ class Schedule : Fragment() {
     private val database = Firebase.firestore
     private lateinit var courseAdapter: CourseAdapter
     private val sharedViewModel: SharedViewModel by lazy {
-        ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        ViewModelProvider(requireActivity())[SharedViewModel::class.java]
     }
 
     override fun onCreateView(

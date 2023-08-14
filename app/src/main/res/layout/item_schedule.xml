@@ -89,22 +89,22 @@
 
             <TextView
                 android:id="@+id/costCourse"
-                android:layout_width="wrap_content"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:text="Cтоимость"
                 android:textColor="@color/black" />
 
-            <Button
-                android:layout_gravity="right"
+            <CheckBox
+                android:button="@drawable/favourite_button_filled"
                 android:id="@+id/favourite_add"
                 android:contentDescription="Favourite"
                 android:layout_width="48dp"
-                android:layout_marginStart="230dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/blue"
                 android:layout_height="48dp"
-                android:gravity="end"
-                android:background="@drawable/favourite_button_filled" />
+                android:gravity="center"
+                app:useMaterialThemeColors="false"
+                />
         </LinearLayout>
 
     </LinearLayout>
