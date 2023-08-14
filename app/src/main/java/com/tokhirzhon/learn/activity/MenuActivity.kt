@@ -13,7 +13,6 @@ import com.tokhirzhon.learn.databinding.ActivityMenuBinding
 import com.tokhirzhon.learn.ui.connect.FragmentConnect
 import com.tokhirzhon.learn.ui.favourite.FavouriteFragment
 import com.tokhirzhon.learn.ui.home.HomeFragment
-import com.tokhirzhon.learn.ui.personal.Personal
 import com.tokhirzhon.learn.ui.schedule.Schedule
 
 class MenuActivity : AppCompatActivity() {
@@ -42,10 +41,6 @@ class MenuActivity : AppCompatActivity() {
             }
         }
 
-        personalMenu.setOnClickListener {
-            containerCardView.visibility = View.GONE
-            switchFragment(Personal())
-        }
 
         dashboardHome.setOnClickListener {
             containerCardView.visibility = View.GONE
@@ -78,7 +73,6 @@ class MenuActivity : AppCompatActivity() {
                 R.id.navigation_favourite -> switchFragment(FavouriteFragment())
                 R.id.navigatioon_schedule -> switchFragment(Schedule())
                 R.id.navigation_connect -> switchFragment(FragmentConnect())
-                R.id.navigation_personal -> switchFragment(Personal())
 
                 else -> false
             }
