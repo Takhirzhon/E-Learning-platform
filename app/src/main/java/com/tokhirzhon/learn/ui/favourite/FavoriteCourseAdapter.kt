@@ -2,6 +2,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.tokhirzhon.learn.databinding.ItemFavouriteBinding
 import com.tokhirzhon.learn.databinding.ItemScheduleBinding
 import com.tokhirzhon.learn.model.Course
 
@@ -11,7 +12,7 @@ class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemScheduleBinding.inflate(
+        val binding = ItemFavouriteBinding.inflate(
             inflater,
             parent,
             false
