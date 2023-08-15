@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tokhirzhon.learn.databinding.FragmentFavouriteBinding
 import com.tokhirzhon.learn.model.SharedViewModel
-import com.tokhirzhon.learn.model.Course
 
 class FavouriteFragment : Fragment() {
 
@@ -32,6 +31,7 @@ class FavouriteFragment : Fragment() {
 
         val favoriteAdapter = FavoriteCourseAdapter(emptyList())
         favoriteRecyclerView.adapter = favoriteAdapter
+
         favoriteRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         sharedViewModel.favoriteCourses.observe(viewLifecycleOwner) { favoriteCourses ->

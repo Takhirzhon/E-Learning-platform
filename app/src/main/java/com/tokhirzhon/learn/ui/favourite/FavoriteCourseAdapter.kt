@@ -28,7 +28,6 @@ class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
     }
 
 
-
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val course = favoriteCourses[position]
         holder.bind(course)
@@ -52,11 +51,7 @@ class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
             binding.costCourse.text = course.costCourse
 
             binding.favouriteAdd.setOnClickListener {
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    removeCourse(course)
-
-                }
+                removeCourse(course)
             }
         }
     }

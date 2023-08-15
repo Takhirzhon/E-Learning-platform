@@ -37,7 +37,7 @@ class Schedule : Fragment() {
         recyclerView = binding.courseRecyclerView
         courses = arrayListOf()
 
-        courseAdapter = CourseAdapter(courses) { clickedCourse ->
+        courseAdapter = CourseAdapter(courses, sharedViewModel) { clickedCourse ->
             sharedViewModel.addToFavorites(clickedCourse as Course)
         }
         recyclerView.adapter = courseAdapter
