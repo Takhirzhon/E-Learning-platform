@@ -29,9 +29,4 @@
         android:label="@string/connect"
         tools:layout="@layout/fragment_connect" />
 
-    <fragment
-        android:id="@+id/navigation_personal"
-        android:name="com.tokhirzhon.learn.ui.personal.Personal"
-        android:label="@string/personal_account"
-        tools:layout="@layout/fragment_personal"/>
 </navigation>
