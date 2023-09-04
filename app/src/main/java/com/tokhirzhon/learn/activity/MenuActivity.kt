@@ -68,29 +68,6 @@ class MenuActivity : AppCompatActivity() {
         }
 
 
-        val coursesFreeBtn = findViewById<ImageButton>(R.id.coursesFree)
-        val cardViewFree = findViewById<CardView>(R.id.coursesCardViewFree)
-        coursesFreeBtn.setOnClickListener {
-            if(cardViewFree.visibility == View.VISIBLE) {
-                cardViewFree.visibility = View.GONE
-            } else {
-                cardViewFree.visibility = View.VISIBLE
-            }
-        }
-
-        val coursesPremiumBtn = findViewById<ImageButton>(R.id.premium)
-        val cardViewPremium = findViewById<CardView>(R.id.premiumCoursesView)
-
-        coursesPremiumBtn.setOnClickListener{
-            if(cardViewPremium.visibility == View.VISIBLE) {
-                cardViewPremium.visibility = View.GONE
-            } else {
-                cardViewPremium.visibility = View.VISIBLE
-            }
-        }
-
-
-
         // Set the first fragment as the default fragment
         switchFragment(HomeFragment())
         binding.navView.setOnNavigationItemSelectedListener { item ->
