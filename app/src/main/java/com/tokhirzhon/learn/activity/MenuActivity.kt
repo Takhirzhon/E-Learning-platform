@@ -1,6 +1,7 @@
 package com.tokhirzhon.learn.activity
 
 import FreeCoursesFragment
+import PremiumCoursesFragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -48,14 +49,14 @@ class MenuActivity : AppCompatActivity() {
             containerCardView.visibility = View.GONE
             switchFragment(HomeFragment())
         }
-        /*    freeCourses.setOnClickListener {
+        freeCourses.setOnClickListener {
             containerCardView.visibility = View.GONE
-            switchFragment(Personal())
-        }*/
-        /*    premiumCourses.setOnClickListener {
+            switchFragment(FreeCoursesFragment())
+        }
+        premiumCourses.setOnClickListener {
             containerCardView.visibility = View.GONE
-            switchFragment(Personal())
-        }*/
+            switchFragment(PremiumCoursesFragment())
+        }
         favouriteMenu.setOnClickListener {
             containerCardView.visibility = View.GONE
             switchFragment(FavouriteFragment())
@@ -66,6 +67,11 @@ class MenuActivity : AppCompatActivity() {
             switchFragment(Schedule())
         }
 
+
+        val coursesFreeBtn = findViewById<ImageButton>(R.id.coursesFree)
+        coursesFreeBtn.setOnClickListener {
+
+        }
 
         // Set the first fragment as the default fragment
         switchFragment(HomeFragment())
