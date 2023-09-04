@@ -80,15 +80,6 @@ class MenuActivity : AppCompatActivity() {
             }
         }
 
-        val fragmentContainer = findViewById<FragmentContainerView>(R.id.fragment_container)
-
-        freeCourses.setOnClickListener {
-            val freeCoursesFragment = FreeCoursesFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(fragmentContainer.id, freeCoursesFragment)
-                .commit()
-        }
-
     }
 
     private fun switchFragment(fragment: Fragment): Boolean {
