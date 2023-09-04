@@ -2,84 +2,114 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment"
     android:background="@color/white"
-    android:id="@+id/menu">
+    tools:context=".ui.home.HomeFragment">
 
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:contentDescription="Scrollable content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-           <!-- <com.google.android.gms.ads.AdView
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                ads:adSize="BANNER"
-                ads:adUnitId="" />
+    <!-- <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            ads:adSize="BANNER"
+            ads:adUnitId="" />
 -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:background="@drawable/free_courses"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/coursesFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/free_courses"
+        android:contentDescription="Free Courses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:id="@+id/premium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
-                android:background="@drawable/premium_courses"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/connect_connect"
+        android:layout_width="347dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_blue"
+        android:text="@string/connect"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/premium" />
 
-            <Button
-                android:id="@+id/connect_connect"
-                android:layout_width="347dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/button_blue"
-                android:text="@string/connect"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/premium"
-                />
-      <!--      <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="729dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coursesCardViewFree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/premium">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/freeCoursesView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/fragment_freecourses" />
+    </androidx.cardview.widget.CardView>
 
-                >-->
+    <ImageButton
+        android:id="@+id/premium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/premium_courses"
+        android:contentDescription="Premium Courses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-           <!-- </androidx.recyclerview.widget.RecyclerView>
-            </androidx.cardview.widget.CardView>-->
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coursesCardViewPremium"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/premium">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/premiumCoursesView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/fragment_premiumcourses" />
+    </androidx.cardview.widget.CardView>
+
+
+    <!--      <androidx.cardview.widget.CardView
+              android:layout_width="match_parent"
+              android:layout_height="729dp"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              android:visibility="visible"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent">
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+              >-->
+
+    <!-- </androidx.recyclerview.widget.RecyclerView>
+     </androidx.cardview.widget.CardView>-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

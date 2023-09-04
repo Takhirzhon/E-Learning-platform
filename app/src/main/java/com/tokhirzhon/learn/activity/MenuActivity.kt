@@ -1,5 +1,6 @@
 package com.tokhirzhon.learn.activity
 
+import FreeCoursesFragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainerView
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ActivityMenuBinding
 import com.tokhirzhon.learn.ui.connect.FragmentConnect
@@ -46,11 +48,11 @@ class MenuActivity : AppCompatActivity() {
             containerCardView.visibility = View.GONE
             switchFragment(HomeFragment())
         }
-    /*    freeCourses.setOnClickListener {
+        /*    freeCourses.setOnClickListener {
             containerCardView.visibility = View.GONE
             switchFragment(Personal())
         }*/
-    /*    premiumCourses.setOnClickListener {
+        /*    premiumCourses.setOnClickListener {
             containerCardView.visibility = View.GONE
             switchFragment(Personal())
         }*/
@@ -76,6 +78,15 @@ class MenuActivity : AppCompatActivity() {
 
                 else -> false
             }
+        }
+
+        val fragmentContainer = findViewById<FragmentContainerView>(R.id.fragment_container)
+
+        freeCourses.setOnClickListener {
+            val freeCoursesFragment = FreeCoursesFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(fragmentContainer.id, freeCoursesFragment)
+                .commit()
         }
 
     }
