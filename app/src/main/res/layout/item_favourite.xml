@@ -84,25 +84,27 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="380dp"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/costCourse"
-                android:layout_width="320dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Cтоимость"
+                android:layout_weight="1"
                 android:textColor="@color/black" />
 
             <CheckBox
                 android:button="@drawable/favourite_button_filled"
                 android:id="@+id/favourite_add"
+                android:layout_marginTop="10dp"
                 android:contentDescription="Favourite"
                 android:layout_width="48dp"
-                android:layout_marginEnd="30dp"
+                android:gravity="center"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/blue"
                 android:layout_height="48dp"
-                android:gravity="center"
                 app:useMaterialThemeColors="false"
                 />
         </LinearLayout>
@@ -111,27 +113,16 @@
 
     <Button
         android:id="@+id/contactButton"
-        android:layout_width="162dp"
+        android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
         android:background="@drawable/button_blue"
         android:text="@string/connect"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/parentSchedule" />
 
-    <ImageView
-        android:layout_width="162dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/button_blue"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/contactButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parentSchedule" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
