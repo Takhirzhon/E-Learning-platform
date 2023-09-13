@@ -1,9 +1,5 @@
 package com.tokhirzhon.learn.activity
 
-import FreeCoursesFragment
-import PremiumCoursesFragment
-import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -11,7 +7,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
 import com.tokhirzhon.learn.R
 import com.tokhirzhon.learn.databinding.ActivityMenuBinding
 import com.tokhirzhon.learn.ui.connect.FragmentConnect
@@ -48,14 +43,6 @@ class MenuActivity : AppCompatActivity() {
         dashboardHome.setOnClickListener {
             containerCardView.visibility = View.GONE
             switchFragment(HomeFragment())
-        }
-        freeCourses.setOnClickListener {
-            containerCardView.visibility = View.GONE
-            switchFragment(FreeCoursesFragment())
-        }
-        premiumCourses.setOnClickListener {
-            containerCardView.visibility = View.GONE
-            switchFragment(PremiumCoursesFragment())
         }
         favouriteMenu.setOnClickListener {
             containerCardView.visibility = View.GONE
