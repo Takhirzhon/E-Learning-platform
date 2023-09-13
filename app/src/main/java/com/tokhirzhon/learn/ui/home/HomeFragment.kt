@@ -1,5 +1,6 @@
 package com.tokhirzhon.learn.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,27 +56,19 @@ class HomeFragment : Fragment() {
 
         // Установка слушателя для кнопок
         coursesFreeBtn.setOnClickListener {
-            if (cardViewFree.visibility == View.VISIBLE) {
-
-            } else {
-                cardViewFree.visibility = View.VISIBLE
-            }
+            cardViewFree.visibility = View.VISIBLE
         }
-
-
         coursesPremiumBtn.setOnClickListener {
-            if (cardViewPremium.visibility == View.VISIBLE) {
-
-            } else {
-                cardViewPremium.visibility = View.VISIBLE
-            }
-
+            cardViewPremium.visibility = View.VISIBLE
         }
-
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-
+                if (cardViewFree.visibility == View.VISIBLE) {
+                    cardViewFree.visibility = View.GONE
+                } else if (cardViewPremium.visibility == View.VISIBLE) {
+                    cardViewPremium.visibility = View.GONE
+                }
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
