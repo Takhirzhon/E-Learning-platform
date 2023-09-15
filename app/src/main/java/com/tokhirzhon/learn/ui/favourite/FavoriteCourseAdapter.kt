@@ -5,9 +5,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tokhirzhon.learn.databinding.ItemFavouriteBinding
 import com.tokhirzhon.learn.databinding.ItemScheduleBinding
 import com.tokhirzhon.learn.model.Course
+import com.tokhirzhon.learn.model.SharedViewModel
 
-class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
-    RecyclerView.Adapter<FavoriteCourseAdapter.CourseViewHolder>() {
+class FavoriteCourseAdapter(
+    private var favoriteCourses: List<Course>,
+    private val sharedViewModel: SharedViewModel
+) : RecyclerView.Adapter<FavoriteCourseAdapter.CourseViewHolder>() {
+    // Rest of the adapter code remains the same
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
@@ -19,14 +24,6 @@ class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
         )
         return CourseViewHolder(binding.root)
     }
-
-    fun removeCourse(course: Course) {
-        val updatedList = favoriteCourses.toMutableList()
-        updatedList.remove(course)
-        favoriteCourses = updatedList
-        notifyDataSetChanged()
-    }
-
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         val course = favoriteCourses[position]
@@ -51,8 +48,11 @@ class FavoriteCourseAdapter(private var favoriteCourses: List<Course>) :
             binding.costCourse.text = course.costCourse
 
             binding.favouriteAdd.setOnClickListener {
-                removeCourse(course)
+                if (sharedViewModel.favoriteCourses.value.orEmpty().contains(course)) {
+                    sharedViewModel.removeFromFavorites(course)
+                }
             }
+
         }
     }
 }

@@ -17,6 +17,7 @@ class FavouriteFragment : Fragment() {
     private lateinit var favoriteRecyclerView: RecyclerView
     private lateinit var sharedViewModel: SharedViewModel
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +30,7 @@ class FavouriteFragment : Fragment() {
 
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
-        val favoriteAdapter = FavoriteCourseAdapter(emptyList())
+        val favoriteAdapter = FavoriteCourseAdapter(emptyList(), sharedViewModel)
         favoriteRecyclerView.adapter = favoriteAdapter
 
         favoriteRecyclerView.layoutManager = LinearLayoutManager(requireContext())

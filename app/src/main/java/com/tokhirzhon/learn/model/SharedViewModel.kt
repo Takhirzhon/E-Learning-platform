@@ -8,10 +8,13 @@ class SharedViewModel : ViewModel() {
     private val _favoriteCourses = MutableLiveData<List<Course>>()
     val favoriteCourses: LiveData<List<Course>> get() = _favoriteCourses
 
+
     fun addToFavorites(course: Course) {
-        val updatedList = _favoriteCourses.value?.toMutableList() ?: mutableListOf()
-        updatedList.add(course)
-        _favoriteCourses.value = updatedList
+        val currentFavorites = _favoriteCourses.value.orEmpty().toMutableList()
+        if (!currentFavorites.contains(course)) {
+            currentFavorites.add(course)
+        }
+        _favoriteCourses.value = currentFavorites
     }
 
     fun removeFromFavorites(course: Course) {
