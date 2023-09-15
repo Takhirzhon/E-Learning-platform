@@ -50,6 +50,8 @@ class CourseAdapter(
             binding.favouriteAdd.setOnClickListener {
                 if (!sharedViewModel.favoriteCourses.value.orEmpty().contains(course)) {
                     onFavouriteClick(course)
+                } else {
+                    sharedViewModel.removeFromFavorites(course)
                 }
             }
         }

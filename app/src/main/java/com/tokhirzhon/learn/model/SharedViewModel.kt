@@ -13,4 +13,10 @@ class SharedViewModel : ViewModel() {
         updatedList.add(course)
         _favoriteCourses.value = updatedList
     }
+
+    fun removeFromFavorites(course: Course) {
+        val currentFavorites = _favoriteCourses.value.orEmpty().toMutableList()
+        currentFavorites.remove(course)
+        _favoriteCourses.value = currentFavorites
+    }
 }
