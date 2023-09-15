@@ -9,6 +9,4 @@
         android:drawable="@drawable/favorite_filled_small"
         android:state_checked="true" />
 
-    <item
-        android:drawable="@drawable/favorite_filled_small"/>
 </selector>
